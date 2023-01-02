@@ -69,8 +69,6 @@ h1 {
 
 /* GAME */
 .game {
-  width: 700px;
-  height: 450px;
   position: relative;
 
   background-color: #fff;
@@ -79,6 +77,11 @@ h1 {
   background-repeat: no-repeat;
   background-position: center;
   border: .5rem solid rgb(111, 117, 111);
+}
+
+#canvas {
+  width: 700px;
+  height: 450px;
 }
 
 menu {
@@ -133,6 +136,12 @@ svg {
   border-radius: 50%;
 }
 
+
+/* System classes */
 .active {
   display: block;
+}
+
+.disabled {
+  display: none;
 }

@@ -6,21 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="shortcut icon" href="assets/img/bottle.png" type="image/x-icon">
-  <title>Catch bottles v.1</title>
-  <script src="assets/js/app.js" deffer></script>
+  <title>Catch bottles GOOD</title>
+
+  <script src="assets/js/app.js" defer></script>
+
 </head>
 <body>
-  <header class="main__menu" style="display: none;">
+
+  <header class="main__menu active">
     <h1>Choose alcoplayer</h1>
     <div class="players">
-      <div class="player" style="background-image: url('assets/img/players/dima1.png');"></div>
-      <div class="player" style="background-image: url('assets/img/players/leha1.png');"></div>
-      <div class="player" style="background-image: url('assets/img/players/paha1.png');"></div>
-      <div class="player" style="background-image: url('assets/img/players/vadim1.png');"></div>
+      <div class="player" onclick="choosePlayer('dima')" style="background-image: url('assets/img/players/dima1.png');"></div>
+      <div class="player" onclick="choosePlayer('leha')" style="background-image: url('assets/img/players/leha1.png');"></div>
+      <div class="player" onclick="choosePlayer('paha')" style="background-image: url('assets/img/players/paha1.png');"></div>
+      <div class="player" onclick="choosePlayer('vadim')" style="background-image: url('assets/img/players/vadim1.png');"></div>
     </div>
   </header>
 
-  <main class="game" style="display: none;">
+  <main class="game disabled">
     <menu>
       <ul class="count">
         <li>
@@ -41,7 +44,7 @@
           </svg>
         </li>
         <li>
-          <span>11</span>
+          <span class="count__span"></span>
         </li>
       </ul>
       <ul class="health">
@@ -60,12 +63,12 @@
 		      </svg>
         </li>
         <li>
-          <span>5</span>
+          <span class="heart__span"></span>
         </li>
       </ul>
       <ul class="params">
         <li>
-          <svg class="audio" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          <svg class="audio" onclick="soundAdjustment()" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="0 0 330 330" style="enable-background:new 0 0 330 330;" xml:space="preserve">
                     <path id="XMLID_535_" d="M192.078,31.775c-4.878-2.61-10.796-2.324-15.398,0.744L90.459,90H15c-8.284,0-15,6.716-15,15v120
                     c0,8.284,6.716,15,15,15h75.459l86.221,57.481c2.51,1.673,5.411,2.519,8.321,2.519c2.427,0,4.859-0.588,7.077-1.775
@@ -86,7 +89,7 @@
           </svg>
         </li>
         <li>
-          <svg class="reload" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          <svg class="reload" onclick="location.reload()" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="0 0 496.166 496.166" style="enable-background:new 0 0 496.166 496.166;" xml:space="preserve">
                     <path class="arrow" d="M400.813,169.581c-2.502-4.865-14.695-16.012-35.262-5.891
                     c-20.564,10.122-10.625,32.351-10.625,32.351c7.666,15.722,11.98,33.371,11.98,52.046c0,65.622-53.201,118.824-118.828,118.824
@@ -99,11 +102,16 @@
         </li>
       </ul>
     </menu>
-    <canvas id="canvas"></canvas>
+    <canvas id="canvas" width="700" height="450"></canvas>
   </main>
-  <!-- //main -->
+  <!-- //main.game -->
 
-  <div class="win"></div>
-  <div class="lose"></div>
+  <div class="win disabled">
+    <h1>You win!!!</h1>
+  </div>
+  <div class="lose disabled">
+    <h1>You lose!!!</h1>
+  </div>
+
 </body>
 </html>
